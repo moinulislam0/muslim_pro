@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design/jump_button/jump_button.dart';
+import 'package:ui_design/ticktick/ticktick.dart';
 
 class Pages extends StatefulWidget {
   const Pages({super.key});
@@ -24,6 +25,15 @@ class _PagesState extends State<Pages> {
     );
   },
   child: Text('Go to Jump Ayah'), // Simple widget as child
+),
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TasksGridScreen()),
+    );
+  },
+  child: Text('TickTick'), // Simple widget as child
 )
       ],
     ),);
