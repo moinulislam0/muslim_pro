@@ -1,32 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ui_design/core/images/images.dart';
-
-// --- Color Constants (Approximated/Placeholder) ---
-// These colors are visually matched to the new image.
-class AppColors {
-  // Approximated colors based on the new image
-  static const Color cardOrange = Color(0xFFfeca6e); // Warmer yellow/orange
-  static const Color cardGreen = Color(0xFF7ceda3); // Lighter, softer green
-  static const Color cardPurple = Color(0xFFa19afc); // Softer purple
-  static const Color cardYellow = Color(0xFFffeaa8); // Very light yellow
-  static const Color cardRed = Color(0xFFfab0a0); // Soft red/pink
-  static const Color cardBlue = Color(0xFF71b4f6); // Soft blue
-
-  // Background and Text Colors (Approximated)
-  static const Color scaffoldBackground = Color(
-    0xFFF0F2F5,
-  ); // Very light grey/off-white background
-  static const Color headingText = Colors.black87;
-  static const Color bodyText = Colors.black54;
-  static const Color iconColor = Colors.black54;
-  static const Color checkmarkColor =
-      Colors.white; // Color of the checkmark icon inside the circle
-  static const Color fabBackground =
-      Colors.white; // Background of the '+' button
-  static const Color fabIcon =
-      Colors.green; // Color of the '+' icon (approximated)
-}
+import 'package:ui_design/core/colors/colors.dart';
 
 // --- Widget Components ---
 
@@ -69,11 +44,9 @@ class TaskCardGrid extends StatelessWidget {
           color: cardBg,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(10.0),
-
             bottomLeft: Radius.circular(10.0),
             bottomRight: Radius.circular(10.0),
           ), // Approximated border radius
-          // Adding subtle shadow to mimic separation
         ),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -104,11 +77,9 @@ class TaskCardGrid extends StatelessWidget {
                                       headingText,
                                       style: TextStyle(
                                         fontFamily: 'Roboto',
-
                                         fontSize: 14,
                                         fontWeight: FontWeight.w600,
                                         color: headingTextColor,
-
                                         decoration: isStrikethrough
                                             ? TextDecoration.lineThrough
                                             : TextDecoration.none,
@@ -129,7 +100,6 @@ class TaskCardGrid extends StatelessWidget {
                                         topLeft: Radius.circular(20),
                                       ),
                                       color: iconBgColor,
-
                                       // Checkmark circle background
                                       border: Border.all(
                                         color: iconborderColor,
@@ -173,77 +143,68 @@ class TaskCardGrid extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // To push date/time to the bottom
-                    const SizedBox(height: 12), // Spacing before date/time row
-                    // Date and Time Row
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: Container(
-                        padding: EdgeInsets.only(
-                          top: 12,
-                          bottom: 12,
-                          left: 8,
-                          right: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: .07),
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                SvgPicture.asset(
-                                  AppImages.calendar,
-
-                                  height: 14,
-                                  width: 14,
-                                  color: Color(
-                                    0XFF000000,
-                                  ).withValues(alpha: 0.3),
-                                ),
-                                const SizedBox(width: 8),
-                                Text(
-                                  '27 Rajab 1444 AH',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontFamily: "roboto", // Smaller for grid
-                                    color: Color(
-                                      0XFF000000,
-                                    ).withValues(alpha: 0.3),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 8),
-                            Row(
-                              children: [
-                                SvgPicture.asset(
-                                  AppImages.clock,
-                                  height: 14,
-                                  width: 14,
-                                  fit: BoxFit.cover,
-                                  color: Color(
-                                    0XFF000000,
-                                  ).withValues(alpha: 0.3),
-                                ),
-                                const SizedBox(width: 8),
-                                Text(
-                                  'Open 24Hours',
-                                  style: TextStyle(
-                                    fontSize: 12, // Smaller for grid
-                                    color: Color(
-                                      0XFF000000,
-                                    ).withValues(alpha: 0.3),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
+                ),
+              ),
+              // To push date/time to the bottom
+              const SizedBox(height: 12), // Spacing before date/time row
+              // Date and Time Row
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Container(
+                  padding: EdgeInsets.only(
+                    top: 12,
+                    bottom: 12,
+                    left: 8,
+                    right: 8,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: .07),
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppImages.calendar,
+                            height: 14,
+                            width: 14,
+                            color: Color(0XFF000000).withValues(alpha: 0.3),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            '27 Rajab 1444 AH',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontFamily: "roboto", // Smaller for grid
+                              color: Color(0XFF000000).withValues(alpha: 0.3),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            AppImages.clock,
+                            height: 14,
+                            width: 14,
+                            fit: BoxFit.cover,
+                            color: Color(0XFF000000).withValues(alpha: 0.3),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Open 24Hours',
+                            style: TextStyle(
+                              fontSize: 12, // Smaller for grid
+                              color: Color(0XFF000000).withValues(alpha: 0.3),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -264,15 +225,15 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardOrange,
         'heading': 'This is Heading',
-        'headingTextColor': Color(0xFF9d8960), // ✅ Add this
-        'bodyTextColor': Color(0xFF9d8960).withValues(alpha: .9),
+        'headingTextColor': AppColors.headingTextColor, // ✅ Add this
+        'bodyTextColor': AppColors.headingTextColor.withValues(alpha: .9),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': true,
-        'iconBgColor': Color(0XFF77c852),
-        'iconColors': Colors.white,
-        'iconborderColor': Colors.white,
+        'iconBgColor': AppColors.iconBgColor,
+        'iconColors': AppColors.iconColor,
+        'iconborderColor': AppColors.iconborderColor,
       },
       {
         'color': AppColors.cardGreen,
@@ -287,7 +248,7 @@ class TasksGridScreen extends StatelessWidget {
         'strikethrough': false,
         'iconBgColor': Colors.white,
         'iconColors': Color(0xFFc3c6c9),
-        'iconborderColor': Colors.white,
+        'iconborderColor': AppColors.iconborderColor,
       },
       {
         'color': AppColors.cardPurple,
@@ -302,7 +263,7 @@ class TasksGridScreen extends StatelessWidget {
         'strikethrough': false,
         'iconBgColor': Colors.white,
         'iconColors': Color(0xFFc3c6c9),
-        'iconborderColor': Colors.white,
+        'iconborderColor': AppColors.iconborderColor,
       },
       {
         'color': AppColors.cardYellow,
@@ -317,7 +278,7 @@ class TasksGridScreen extends StatelessWidget {
         'strikethrough': false,
         'iconBgColor': Colors.white,
         'iconColors': Color(0xFFc3c6c9),
-        'iconborderColor': Colors.white,
+        'iconborderColor': AppColors.iconborderColor,
       },
       {
         'color': AppColors.cardRed,
@@ -332,7 +293,7 @@ class TasksGridScreen extends StatelessWidget {
         'strikethrough': false,
         'iconBgColor': Colors.white,
         'iconColors': Color(0xFFc3c6c9),
-        'iconborderColor': Colors.white,
+        'iconborderColor': AppColors.iconborderColor,
       },
       {
         'color': AppColors.cardBlue,
@@ -347,7 +308,7 @@ class TasksGridScreen extends StatelessWidget {
         'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
         'iconBgColor': Colors.white,
         'iconColors': Color(0xFFc3c6c9),
-        'iconborderColor': Colors.white,
+        'iconborderColor': AppColors.iconborderColor,
       },
     ];
 
@@ -430,13 +391,6 @@ class TasksGridScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.fabBackground,
                 shape: BoxShape.circle, // ✅ Perfect circle
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    blurRadius: 6,
-                    offset: Offset(0, 3),
-                  ),
-                ],
               ),
               child: InkWell(
                 onTap: () {
