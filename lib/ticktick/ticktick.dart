@@ -55,8 +55,11 @@ class TaskCardGrid extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: cardBg,
-          borderRadius: BorderRadius.circular(
-            10.0,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(10.0),
+
+            bottomLeft: Radius.circular(10.0),
+            bottomRight: Radius.circular(10.0),
           ), // Approximated border radius
           // Adding subtle shadow to mimic separation
           boxShadow: [
@@ -96,7 +99,7 @@ class TaskCardGrid extends StatelessWidget {
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.headingText,
-                                 
+
                                       decoration: isStrikethrough
                                           ? TextDecoration.lineThrough
                                           : TextDecoration.none,
@@ -114,24 +117,18 @@ class TaskCardGrid extends StatelessWidget {
                                         bottomRight: Radius.circular(20),
                                         topLeft: Radius.circular(20),
                                       ),
-                                      color: isCompleted
-                                          ? AppColors.iconColor.withOpacity(0.2)
-                                          : Colors
-                                                .transparent, // Checkmark circle background
+                                      color: Colors.green,
 
+                                      // Checkmark circle background
                                       border: Border.all(
-                                        color: isCompleted
-                                            ? Colors.transparent
-                                            : AppColors.iconColor.withOpacity(
-                                                0.4,
-                                              ),
+                                        color: Colors.white,
                                         width: 1.5,
                                       ),
                                     ),
                                     child: isCompleted
                                         ? Icon(
                                             Icons.check,
-                                            color: AppColors.iconColor,
+                                            color: Colors.white,
                                             size: 18,
                                           )
                                         : null,
