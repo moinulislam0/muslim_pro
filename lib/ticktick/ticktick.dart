@@ -67,121 +67,138 @@ class TaskCardGrid extends StatelessWidget {
             ),
           ],
         ),
-        child: Expanded(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 8,
+            bottom: 8,
+          ), // Approximated inner padding
           child: Column(
-           crossAxisAlignment: CrossAxisAlignment.start,
-        
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              headingText,
-                              style: TextStyle(
-                                fontSize: 12, // Slightly smaller for grid
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.headingText,
-                              ),
-                            ),
-                            Container(
-                              width: 28,
-                              height: 28,
-                              decoration: BoxDecoration(
-                                color: isCompleted
-                                    ? AppColors.iconColor.withOpacity(0.2)
-                                    : Colors
-                                          .transparent, // Checkmark circle background
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: isCompleted
-                                      ? Colors.transparent
-                                      : AppColors.iconColor.withOpacity(
-                                          0.4,
-                                        ),
-                                  width: 1.5,
-                                ),
-                              ),
-                              child: isCompleted
-                                  ? Icon(
-                                      Icons.check,
-                                      color: AppColors.iconColor,
-                                      size: 18,
-                                    )
-                                  : null,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          bodyText,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.bodyText,
-                            decoration: isStrikethrough
-                                ? TextDecoration.lineThrough
-                                : TextDecoration.none,
-                            decorationThickness: isStrikethrough
-                                ? 1.5
-                                : 0,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              const Spacer(), // To push date/time to the bottom
-              const SizedBox(height: 12), // Spacing before date/time row
-              // Date and Time Row
-              Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: .12),
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
+              Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.calendar_today,
-                          size: 16,
-                          color: AppColors.iconColor,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          '27 Rajab 1444 AH',
-                          style: TextStyle(
-                            fontSize: 11, // Smaller for grid
-                            color: AppColors.iconColor,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    headingText,
+                                    style: TextStyle(
+                                      fontSize: 12, // Slightly smaller for grid
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.headingText,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(20),
+                                        bottomRight: Radius.circular(20),
+                                        topLeft: Radius.circular(20),
+                                      ),
+                                      color: isCompleted
+                                          ? AppColors.iconColor.withOpacity(0.2)
+                                          : Colors
+                                                .transparent, // Checkmark circle background
+
+                                      border: Border.all(
+                                        color: isCompleted
+                                            ? Colors.transparent
+                                            : AppColors.iconColor.withOpacity(
+                                                0.4,
+                                              ),
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: isCompleted
+                                        ? Icon(
+                                            Icons.check,
+                                            color: AppColors.iconColor,
+                                            size: 18,
+                                          )
+                                        : null,
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                bodyText,
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: AppColors.bodyText,
+                                  decoration: isStrikethrough
+                                      ? TextDecoration.lineThrough
+                                      : TextDecoration.none,
+                                  decorationThickness: isStrikethrough
+                                      ? 1.5
+                                      : 0,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.access_time,
-                          size: 16,
-                          color: AppColors.iconColor,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          'Open 24Hours',
-                          style: TextStyle(
-                            fontSize: 11, // Smaller for grid
-                            color: AppColors.iconColor,
+                    const Spacer(), // To push date/time to the bottom
+                    const SizedBox(height: 12), // Spacing before date/time row
+                    // Date and Time Row
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: .12),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.calendar_today,
+                                size: 16,
+                                color: AppColors.iconColor,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                '27 Rajab 1444 AH',
+                                style: TextStyle(
+                                  fontSize: 11, // Smaller for grid
+                                  color: AppColors.iconColor,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.access_time,
+                                size: 16,
+                                color: AppColors.iconColor,
+                              ),
+                              const SizedBox(width: 4),
+                              Text(
+                                'Open 24Hours',
+                                style: TextStyle(
+                                  fontSize: 11, // Smaller for grid
+                                  color: AppColors.iconColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
