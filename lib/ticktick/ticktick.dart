@@ -120,8 +120,8 @@ class TaskCardGrid extends StatelessWidget {
                                     ),
                                   ),
                                   Container(
-                                    width: 32,
-                                    height: 32,
+                                    width: 28,
+                                    height: 28,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(20),
@@ -422,18 +422,34 @@ class TasksGridScreen extends StatelessWidget {
           ),
           // Floating Action Button (FAB) positioned relative to the grid
           Positioned(
-            bottom: 20.0, // Approximated distance from bottom
-            right: 20.0, // Approximated distance from right
-            child: FloatingActionButton(
-              onPressed: () {
-                // Action for adding a new task
-              },
-              backgroundColor: AppColors.fabBackground, // White background
-              
-              child: const Icon(
-                Icons.add,
-                color: AppColors.fabIcon, // Greenish plus icon
-                size: 30,
+            bottom: 20.0,
+            right: 20.0,
+            child: Container(
+              width: 56, // ✅ Circle এর width
+              height: 56, // ✅ Circle এর height (same as width)
+              decoration: BoxDecoration(
+                color: AppColors.fabBackground,
+                shape: BoxShape.circle, // ✅ Perfect circle
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 6,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: InkWell(
+                onTap: () {
+                  // Action for adding a new task
+                },
+                borderRadius: BorderRadius.circular(
+                  28,
+                ), // ✅ Ripple effect circular
+                child: const Icon(
+                  Icons.add,
+                  color: AppColors.fabIcon,
+                  size: 30,
+                ),
               ),
             ),
           ),
