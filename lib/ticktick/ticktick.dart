@@ -39,7 +39,21 @@ class TaskCardGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color cardBg = cardColor!;
+    // Provide default values to avoid null errors
+    final Color cardBg = cardColor ?? AppColors.cardBackground;
+    final String displayHeadingText = headingText ?? 'Default Heading';
+    final String displayBodyText = bodyText ?? 'Default body text';
+    final bool displayIsCompleted = isCompleted ?? false;
+    final bool displayIsStrikethrough = isStrikethrough ?? false;
+    final Color displayHeadingTextColor =
+        headingTextColor ?? AppColors.headingText;
+    final Color displayBodyTextColor = bodyTextColor ?? AppColors.bodyText;
+    final Color displayIconBgColor = iconBgColor ?? AppColors.iconBackground;
+    final Color displayIconColors = iconColors ?? AppColors.iconColor;
+    final Color displayIconborderColor =
+        iconborderColor ?? AppColors.iconborderColor;
+    final String displayDateText = dateText ?? '27 Rajab 1444 AH';
+    final String displayHoursText = hoursText ?? 'Open 24 Hours';
 
     return InkWell(
       onTap: onTap,
@@ -80,18 +94,17 @@ class TaskCardGrid extends StatelessWidget {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 8),
                                       child: Text(
-                                        headingText!,
+                                        displayHeadingText,
                                         style: TextStyle(
                                           fontFamily: 'Roboto',
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
-                                          color: headingTextColor,
-                                          decoration: isStrikethrough!
+                                          color: displayHeadingTextColor,
+                                          decoration: displayIsStrikethrough
                                               ? TextDecoration.lineThrough
                                               : TextDecoration.none,
-                                          decorationThickness: isStrikethrough!
-                                              ? 2
-                                              : 0,
+                                          decorationThickness:
+                                              displayIsStrikethrough ? 2 : 0,
                                           decorationColor: Color(0xFF9d8960),
                                         ),
                                       ),
@@ -105,17 +118,17 @@ class TaskCardGrid extends StatelessWidget {
                                           bottomRight: Radius.circular(20),
                                           topLeft: Radius.circular(20),
                                         ),
-                                        color: iconBgColor,
+                                        color: displayIconBgColor,
                                         // Checkmark circle background
                                         border: Border.all(
-                                          color: iconborderColor!,
+                                          color: displayIconborderColor,
                                           width: 1.5,
                                         ),
                                       ),
-                                      child: isCompleted!
+                                      child: displayIsCompleted
                                           ? Icon(
                                               Icons.check,
-                                              color: iconColors,
+                                              color: displayIconColors,
                                               size: 18,
                                             )
                                           : null,
@@ -126,20 +139,19 @@ class TaskCardGrid extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(right: 8),
                                   child: Text(
-                                    bodyText!,
+                                    displayBodyText,
                                     maxLines: 3,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontSize: 12,
                                       fontFamily: "roboto",
                                       fontWeight: FontWeight.w400,
-                                      color: bodyTextColor,
-                                      decoration: isStrikethrough!
+                                      color: displayBodyTextColor,
+                                      decoration: displayIsStrikethrough
                                           ? TextDecoration.lineThrough
                                           : TextDecoration.none,
-                                      decorationThickness: isStrikethrough!
-                                          ? 2
-                                          : 0,
+                                      decorationThickness:
+                                          displayIsStrikethrough ? 2 : 0,
                                       decorationColor: Color(0xFF9d8960),
                                     ),
                                   ),
@@ -180,7 +192,7 @@ class TaskCardGrid extends StatelessWidget {
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              dateText!,
+                              displayDateText,
                               style: TextStyle(
                                 fontSize: 12,
                                 fontFamily: "roboto", // Smaller for grid
@@ -201,7 +213,7 @@ class TaskCardGrid extends StatelessWidget {
                             ),
                             const SizedBox(width: 8),
                             Text(
-                              hoursText!,
+                              displayHoursText,
                               style: TextStyle(
                                 fontSize: 12, // Smaller for grid
                                 color: Color(0XFF000000).withValues(alpha: 0.3),

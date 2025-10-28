@@ -4,7 +4,6 @@ import 'package:ui_design/core/colors/colors.dart';
 import 'package:ui_design/core/images/images.dart';
 import 'package:ui_design/core/style/style.dart';
 
-// --- Reusable Widget: Jump Ayah Card ---
 class JumpAyahCard extends StatelessWidget {
   final String iconPath;
   final String title;
@@ -16,7 +15,6 @@ class JumpAyahCard extends StatelessWidget {
     required this.title,
     this.onTap,
   });
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -73,7 +71,7 @@ class JumpAyahScreen extends StatelessWidget {
           iconPath: AppImages.jumpImg,
           title: 'Jump Hadith',
           onTap: () {
-            // Handle tap
+            
           },
         ),
       ),
