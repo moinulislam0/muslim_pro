@@ -155,49 +155,54 @@ class TaskCardGrid extends StatelessWidget {
                     const Spacer(), // To push date/time to the bottom
                     const SizedBox(height: 12), // Spacing before date/time row
                     // Date and Time Row
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withValues(alpha: .12),
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.calendar_today,
-                                size: 16,
-                                color: AppColors.iconColor,
-                              ),
-                              const SizedBox(width: 4),
-                              Text(
-                                '27 Rajab 1444 AH',
-                                style: TextStyle(
-                                  fontSize: 11, // Smaller for grid
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: .12),
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.calendar_today,
+                                  size: 16,
                                   color: AppColors.iconColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.access_time,
-                                size: 16,
-                                color: AppColors.iconColor,
-                              ),
-                              const SizedBox(width: 4),
-                              Text(
-                                'Open 24Hours',
-                                style: TextStyle(
-                                  fontSize: 11, // Smaller for grid
+                                const SizedBox(width: 4),
+                                Text(
+                                  '27 Rajab 1444 AH',
+                                  style: TextStyle(
+                                    fontSize: 11, // Smaller for grid
+                                    color: AppColors.iconColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 8),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.access_time,
+                                  size: 16,
                                   color: AppColors.iconColor,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                                const SizedBox(width: 4),
+                                Text(
+                                  'Open 24Hours',
+                                  style: TextStyle(
+                                    fontSize: 11, // Smaller for grid
+                                    color: AppColors.iconColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 8),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -314,7 +319,7 @@ class TasksGridScreen extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, // Two columns
                 childAspectRatio:
-                    0.85, // Adjust to control card height/width ratio
+                    0.9, // Adjust to control card height/width ratio
                 crossAxisSpacing: 0, // Handled by card padding
                 mainAxisSpacing: 0, // Handled by card padding
               ),
