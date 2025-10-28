@@ -29,7 +29,12 @@ class AppColors {
 // --- Widget Components ---
 
 class TaskCardGrid extends StatelessWidget {
-  final Color cardColor;
+  final Color cardColor,
+      headingTextColor,
+      bodyTextColor,
+      iconBgColor,
+      iconColors,
+      iconborderColor;
   final String headingText;
   final String bodyText;
   final bool isCompleted;
@@ -38,10 +43,15 @@ class TaskCardGrid extends StatelessWidget {
   const TaskCardGrid({
     super.key,
     required this.cardColor,
+    required this.headingTextColor,
+    required this.bodyTextColor,
     required this.headingText,
     required this.bodyText,
     required this.isCompleted,
     required this.isStrikethrough,
+    required this.iconBgColor,
+    required this.iconColors,
+    required this.iconborderColor,
   });
 
   @override
@@ -64,7 +74,7 @@ class TaskCardGrid extends StatelessWidget {
           // Adding subtle shadow to mimic separation
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black.withValues(alpha: 0.1),
               blurRadius: 4.0,
               offset: const Offset(0, 2),
             ),
@@ -93,19 +103,22 @@ class TaskCardGrid extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    headingText,
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.headingText,
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 10),
+                                    child: Text(
+                                      headingText,
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: headingTextColor,
 
-                                      decoration: isStrikethrough
-                                          ? TextDecoration.lineThrough
-                                          : TextDecoration.none,
-                                      decorationThickness: isStrikethrough
-                                          ? 1.5
-                                          : 0,
+                                        decoration: isStrikethrough
+                                            ? TextDecoration.lineThrough
+                                            : TextDecoration.none,
+                                        decorationThickness: isStrikethrough
+                                            ? 1.5
+                                            : 0,
+                                      ),
                                     ),
                                   ),
                                   Container(
@@ -117,18 +130,18 @@ class TaskCardGrid extends StatelessWidget {
                                         bottomRight: Radius.circular(20),
                                         topLeft: Radius.circular(20),
                                       ),
-                                      color: Colors.green,
+                                      color: iconBgColor,
 
                                       // Checkmark circle background
                                       border: Border.all(
-                                        color: Colors.white,
+                                        color: iconborderColor,
                                         width: 1.5,
                                       ),
                                     ),
                                     child: isCompleted
                                         ? Icon(
                                             Icons.check,
-                                            color: Colors.white,
+                                            color: iconColors,
                                             size: 18,
                                           )
                                         : null,
@@ -142,7 +155,7 @@ class TaskCardGrid extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: AppColors.bodyText,
+                                  color: bodyTextColor,
                                   decoration: isStrikethrough
                                       ? TextDecoration.lineThrough
                                       : TextDecoration.none,
@@ -229,43 +242,67 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardOrange,
         'heading': 'This is Heading',
-
+         'headingTextColor': Color(0xFF3d4953), // ✅ Add this
+        'bodyTextColor': Color(0xFF3d4953).withValues(alpha: .9),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': true,
+        'iconBgColor': Color(0XFF77c852),
+        'iconColors': Colors.white,
+        'iconborderColor': Colors.white,
       },
       {
         'color': AppColors.cardGreen,
         'heading': 'This is Heading',
+        'headingTextColor': Color(0xFF3d4953), // ✅ Add this
+        'bodyTextColor': Color(0xFF3d4953).withValues(alpha: .9),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': false,
+        'iconBgColor': Colors.white,
+        'iconColors': Color(0xFFc3c6c9),
+        'iconborderColor': Colors.white,
       },
       {
         'color': AppColors.cardPurple,
         'heading': 'This is Heading',
+        'headingTextColor': Color(0xFF000000), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': false,
+        'iconBgColor': Colors.white,
+        'iconColors': Color(0xFFc3c6c9),
+        'iconborderColor': Colors.white,
       },
       {
         'color': AppColors.cardYellow,
         'heading': 'This is Heading',
+        'headingTextColor': Color(0xFF000000), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': false,
+        'iconBgColor': Colors.white,
+        'iconColors': Color(0xFFc3c6c9),
+        'iconborderColor': Colors.white,
       },
       {
         'color': AppColors.cardRed,
         'heading': 'This is Heading',
+        'headingTextColor': Color(0xFF000000), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': false,
+        'iconBgColor': Colors.white,
+        'iconColors': Color(0xFFc3c6c9),
+        'iconborderColor': Colors.white,
       },
       {
         'color': AppColors.cardBlue,
@@ -274,6 +311,11 @@ class TasksGridScreen extends StatelessWidget {
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': false,
+        'headingTextColor': Color(0xFF000000), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000),
+        'iconBgColor': Colors.white,
+        'iconColors': Color(0xFFc3c6c9),
+        'iconborderColor': Colors.white,
       },
     ];
 
@@ -336,6 +378,12 @@ class TasksGridScreen extends StatelessWidget {
                   bodyText: data['body'],
                   isCompleted: data['completed'],
                   isStrikethrough: data['strikethrough'],
+                  headingTextColor: data['headingTextColor'], // ✅ Get from data
+                  bodyTextColor: data['bodyTextColor'],
+                  iconBgColor: data['iconBgColor'],
+                  iconColors: data['iconColors'],
+                  iconborderColor: data['iconborderColor'],
+                  // ✅ Get from data
                 );
               },
             ),
