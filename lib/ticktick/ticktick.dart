@@ -104,12 +104,14 @@ class TaskCardGrid extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(top: 10),
+                                    padding: const EdgeInsets.only(top: 8),
                                     child: Text(
                                       headingText,
                                       style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'Roboto',
+
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
                                         color: headingTextColor,
 
                                         decoration: isStrikethrough
@@ -148,20 +150,25 @@ class TaskCardGrid extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 4),
-                              Text(
-                                bodyText,
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: bodyTextColor,
-                                  decoration: isStrikethrough
-                                      ? TextDecoration.lineThrough
-                                      : TextDecoration.none,
-                                  decorationThickness: isStrikethrough
-                                      ? 1.5
-                                      : 0,
+                              const SizedBox(height: 6),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: Text(
+                                  bodyText,
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "roboto",
+                                    fontWeight: FontWeight.w400,
+                                    color: bodyTextColor,
+                                    decoration: isStrikethrough
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none,
+                                    decorationThickness: isStrikethrough
+                                        ? 1.5
+                                        : 0,
+                                  ),
                                 ),
                               ),
                             ],
@@ -177,7 +184,7 @@ class TaskCardGrid extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: .12),
+                          color: Colors.black.withValues(alpha: .07),
                           borderRadius: BorderRadius.all(Radius.circular(8)),
                         ),
                         child: Column(
@@ -186,15 +193,20 @@ class TaskCardGrid extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.calendar_today,
-                                  size: 16,
-                                  color: AppColors.iconColor,
+                                  size: 15,
+                                  color: Color(
+                                    0XFF000000,
+                                  ).withValues(alpha: 0.3),
                                 ),
-                                const SizedBox(width: 4),
+                                const SizedBox(width: 5),
                                 Text(
                                   '27 Rajab 1444 AH',
                                   style: TextStyle(
-                                    fontSize: 11, // Smaller for grid
-                                    color: AppColors.iconColor,
+                                    fontSize: 12,
+                                    fontFamily: "roboto", // Smaller for grid
+                                    color: Color(
+                                      0XFF000000,
+                                    ).withValues(alpha: 0.3),
                                   ),
                                 ),
                               ],
@@ -204,15 +216,19 @@ class TaskCardGrid extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.access_time,
-                                  size: 16,
-                                  color: AppColors.iconColor,
+                                  size: 15,
+                                  color: Color(
+                                    0XFF000000,
+                                  ).withValues(alpha: 0.3),
                                 ),
                                 const SizedBox(width: 4),
                                 Text(
                                   'Open 24Hours',
                                   style: TextStyle(
-                                    fontSize: 11, // Smaller for grid
-                                    color: AppColors.iconColor,
+                                    fontSize: 12, // Smaller for grid
+                                    color: Color(
+                                      0XFF000000,
+                                    ).withValues(alpha: 0.3),
                                   ),
                                 ),
                               ],
@@ -242,8 +258,8 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardOrange,
         'heading': 'This is Heading',
-         'headingTextColor': Color(0xFF3d4953), // ✅ Add this
-        'bodyTextColor': Color(0xFF3d4953).withValues(alpha: .9),
+        'headingTextColor': Color(0xFF9d8960), // ✅ Add this
+        'bodyTextColor': Color(0xFF9d8960).withValues(alpha: .9),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
@@ -255,8 +271,10 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardGreen,
         'heading': 'This is Heading',
-        'headingTextColor': Color(0xFF3d4953), // ✅ Add this
-        'bodyTextColor': Color(0xFF3d4953).withValues(alpha: .9),
+        'headingTextColor': Color(
+          0xFF000000,
+        ).withValues(alpha: .6), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
@@ -268,8 +286,10 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardPurple,
         'heading': 'This is Heading',
-        'headingTextColor': Color(0xFF000000), // ✅ Add this
-        'bodyTextColor': Color(0xFF000000),
+        'headingTextColor': Color(
+          0xFF000000,
+        ).withValues(alpha: .6), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
@@ -281,8 +301,10 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardYellow,
         'heading': 'This is Heading',
-        'headingTextColor': Color(0xFF000000), // ✅ Add this
-        'bodyTextColor': Color(0xFF000000),
+        'headingTextColor': Color(
+          0xFF000000,
+        ).withValues(alpha: .6), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
@@ -294,8 +316,10 @@ class TasksGridScreen extends StatelessWidget {
       {
         'color': AppColors.cardRed,
         'heading': 'This is Heading',
-        'headingTextColor': Color(0xFF000000), // ✅ Add this
-        'bodyTextColor': Color(0xFF000000),
+        'headingTextColor': Color(
+          0xFF000000,
+        ).withValues(alpha: .6), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
@@ -311,8 +335,10 @@ class TasksGridScreen extends StatelessWidget {
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
         'strikethrough': false,
-        'headingTextColor': Color(0xFF000000), // ✅ Add this
-        'bodyTextColor': Color(0xFF000000),
+        'headingTextColor': Color(
+          0xFF000000,
+        ).withValues(alpha: .6), // ✅ Add this
+        'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
         'iconBgColor': Colors.white,
         'iconColors': Color(0xFFc3c6c9),
         'iconborderColor': Colors.white,
@@ -365,7 +391,7 @@ class TasksGridScreen extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, // Two columns
                 childAspectRatio:
-                    0.9, // Adjust to control card height/width ratio
+                    0.85, // Adjust to control card height/width ratio
                 crossAxisSpacing: 0, // Handled by card padding
                 mainAxisSpacing: 0, // Handled by card padding
               ),
