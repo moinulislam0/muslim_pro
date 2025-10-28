@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:ui_design/core/images/images.dart';
 
 // --- Color Constants (Approximated/Placeholder) ---
 // These colors are visually matched to the new image.
 class AppColors {
   // Approximated colors based on the new image
-  static const Color cardOrange = Color(0xFFFFD54F); // Warmer yellow/orange
-  static const Color cardGreen = Color(0xFF81C784); // Lighter, softer green
-  static const Color cardPurple = Color(0xFFBA68C8); // Softer purple
-  static const Color cardYellow = Color(0xFFFFEB85); // Very light yellow
-  static const Color cardRed = Color(0xFFEF9A9A); // Soft red/pink
-  static const Color cardBlue = Color(0xFF90CAF9); // Soft blue
+  static const Color cardOrange = Color(0xFFfeca6e); // Warmer yellow/orange
+  static const Color cardGreen = Color(0xFF7ceda3); // Lighter, softer green
+  static const Color cardPurple = Color(0xFFa19afc); // Softer purple
+  static const Color cardYellow = Color(0xFFffeaa8); // Very light yellow
+  static const Color cardRed = Color(0xFFfab0a0); // Soft red/pink
+  static const Color cardBlue = Color(0xFF71b4f6); // Soft blue
 
   // Background and Text Colors (Approximated)
   static const Color scaffoldBackground = Color(
@@ -72,13 +74,6 @@ class TaskCardGrid extends StatelessWidget {
             bottomRight: Radius.circular(10.0),
           ), // Approximated border radius
           // Adding subtle shadow to mimic separation
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
-              blurRadius: 4.0,
-              offset: const Offset(0, 2),
-            ),
-          ],
         ),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -111,21 +106,21 @@ class TaskCardGrid extends StatelessWidget {
                                         fontFamily: 'Roboto',
 
                                         fontSize: 14,
-                                        fontWeight: FontWeight.w500,
+                                        fontWeight: FontWeight.w600,
                                         color: headingTextColor,
 
                                         decoration: isStrikethrough
                                             ? TextDecoration.lineThrough
                                             : TextDecoration.none,
                                         decorationThickness: isStrikethrough
-                                            ? 1.5
+                                            ? 2
                                             : 0,
                                       ),
                                     ),
                                   ),
                                   Container(
-                                    width: 28,
-                                    height: 28,
+                                    width: 32,
+                                    height: 32,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(20),
@@ -176,13 +171,18 @@ class TaskCardGrid extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Spacer(), // To push date/time to the bottom
+                    // To push date/time to the bottom
                     const SizedBox(height: 12), // Spacing before date/time row
                     // Date and Time Row
                     Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: Container(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.only(
+                          top: 12,
+                          bottom: 12,
+                          left: 8,
+                          right: 8,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.black.withValues(alpha: .07),
                           borderRadius: BorderRadius.all(Radius.circular(8)),
@@ -191,14 +191,16 @@ class TaskCardGrid extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Icon(
-                                  Icons.calendar_today,
-                                  size: 15,
+                                SvgPicture.asset(
+                                  AppImages.calendar,
+
+                                  height: 14,
+                                  width: 14,
                                   color: Color(
                                     0XFF000000,
                                   ).withValues(alpha: 0.3),
                                 ),
-                                const SizedBox(width: 5),
+                                const SizedBox(width: 8),
                                 Text(
                                   '27 Rajab 1444 AH',
                                   style: TextStyle(
@@ -214,14 +216,16 @@ class TaskCardGrid extends StatelessWidget {
                             const SizedBox(height: 8),
                             Row(
                               children: [
-                                Icon(
-                                  Icons.access_time,
-                                  size: 15,
+                                SvgPicture.asset(
+                                  AppImages.clock,
+                                  height: 14,
+                                  width: 14,
+                                  fit: BoxFit.cover,
                                   color: Color(
                                     0XFF000000,
                                   ).withValues(alpha: 0.3),
                                 ),
-                                const SizedBox(width: 4),
+                                const SizedBox(width: 8),
                                 Text(
                                   'Open 24Hours',
                                   style: TextStyle(
@@ -391,7 +395,7 @@ class TasksGridScreen extends StatelessWidget {
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, // Two columns
                 childAspectRatio:
-                    0.85, // Adjust to control card height/width ratio
+                    0.88, // Adjust to control card height/width ratio
                 crossAxisSpacing: 0, // Handled by card padding
                 mainAxisSpacing: 0, // Handled by card padding
               ),
