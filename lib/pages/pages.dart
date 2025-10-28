@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_design/99_names/99_names.dart';
 import 'package:ui_design/jump_button/jump_button.dart';
 import 'package:ui_design/ticktick/ticktick.dart';
 
@@ -34,7 +35,16 @@ ElevatedButton(
     );
   },
   child: Text('TickTick'), // Simple widget as child
-)
+),
+ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AsmaulHusnaScreen()),
+    );
+  },
+  child: Text('Asmaul Husna'), // Simple widget as child
+),
       ],
     ),);
   }
