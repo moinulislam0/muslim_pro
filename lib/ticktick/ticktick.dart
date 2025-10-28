@@ -146,7 +146,11 @@ class TaskCardGrid extends StatelessWidget {
                                       fontSize: 12,
                                       fontFamily: "roboto",
                                       fontWeight: FontWeight.w400,
-                                      color: displayBodyTextColor,
+                                      color: isCompleted!
+                                          ? Color.fromARGB(255, 221, 39, 39)
+                                          : Color(
+                                              0xFF000000,
+                                            ).withValues(alpha: .6),
                                       decoration: displayIsStrikethrough
                                           ? TextDecoration.lineThrough
                                           : TextDecoration.none,
@@ -262,7 +266,7 @@ class TasksGridScreen extends StatelessWidget {
         'headingTextColor': Color(
           0xFF000000,
         ).withValues(alpha: .6), // ✅ Add this
-        'bodyTextColor': Color(0xFF000000).withValues(alpha: .6),
+        'bodyTextColor': Color.fromARGB(255, 185, 32, 32).withValues(alpha: .6),
         'body':
             'Typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before',
         'completed': true,
