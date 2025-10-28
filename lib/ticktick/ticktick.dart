@@ -115,6 +115,7 @@ class TaskCardGrid extends StatelessWidget {
                                         decorationThickness: isStrikethrough
                                             ? 2
                                             : 0,
+                                        decorationColor: Color(0xFF9d8960),
                                       ),
                                     ),
                                   ),
@@ -161,8 +162,9 @@ class TaskCardGrid extends StatelessWidget {
                                         ? TextDecoration.lineThrough
                                         : TextDecoration.none,
                                     decorationThickness: isStrikethrough
-                                        ? 1.5
+                                        ? 2
                                         : 0,
+                                    decorationColor: Color(0xFF9d8960),
                                   ),
                                 ),
                               ),
@@ -427,7 +429,7 @@ class TasksGridScreen extends StatelessWidget {
                 // Action for adding a new task
               },
               backgroundColor: AppColors.fabBackground, // White background
-              elevation: 6.0,
+              
               child: const Icon(
                 Icons.add,
                 color: AppColors.fabIcon, // Greenish plus icon
