@@ -265,29 +265,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         statusBarColor: AppColors.appBarBackground,
         statusBarIconBrightness: Brightness.light,
       ),
-      backgroundColor: AppColors.appBarBackground,
+      backgroundColor: Colors.white,
       elevation: 0, // No shadow below the app bar
       automaticallyImplyLeading: false,
-      title: Text(
-        'Mosque Finder',
-        style: TextStyle(
-          color: AppColors.appBarText,
-          fontSize: 18.0, // Approximation
-          fontWeight: FontWeight.w600, // Approximation
+      title: Center(
+        child: Text(
+          'Mosque Finder',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 24.0, // Approximation
+            fontWeight: FontWeight.w600, // Approximation
+          ),
         ),
       ),
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back, color: AppColors.appBarText),
+        icon: const Icon(Icons.arrow_back, color: Colors.black),
         onPressed: () {
           // Action for back button
         },
       ),
       actions: [
         IconButton(
-          icon: const Icon(
-            Icons.location_searching,
-            color: AppColors.appBarText,
-          ),
+          icon: const Icon(Icons.location_searching, color: Colors.black),
           onPressed: () {
             // Action for compass/location icon
           },
