@@ -102,27 +102,27 @@ class FinalQiblaScreen extends StatelessWidget {
         // Use a SingleChildScrollView in case content overflows a small screen
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 60.0),
+            const SizedBox(height: 30.0),
 
             // 1. Compass Widget
             Container(
               child: SvgPicture.asset(
                 'assets/images/group.svg',
                 fit: BoxFit.cover,
-                height: 295,
-                width: 295,
+                height: 330,
+                width: 305,
                 alignment: Alignment.center,
 
                 // Center the compass image
               ),
             ),
 
-            const SizedBox(height: 30.0),
+            const SizedBox(height: 80.0),
 
             // 2. Location Bar
             _buildLocationBar(),
 
-            const SizedBox(height: 25.0),
+            const SizedBox(height: 50.0),
 
             // 3. Instruction Box
             _buildInstructionBox(),
@@ -159,9 +159,9 @@ class FinalQiblaScreen extends StatelessWidget {
             Text(
               '277 Mecca, Saudi Arabia',
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 14,
                 fontFamily: 'roboto',
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: FinalQiblaColors.mainTextColor,
               ),
             ),
@@ -196,9 +196,9 @@ class FinalQiblaScreen extends StatelessWidget {
             'To determine Qibla, turn the phone left and right several times and keep it parallel to the ground.',
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 12.0,
+              fontSize: 14.0,
               fontFamily: 'roboto',
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               color: Color(0XFF3D4953),
               height: 1.4,
             ),
@@ -218,8 +218,8 @@ class FinalQiblaScreen extends StatelessWidget {
             const TextSpan(
               text: 'NOTE: ',
               style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 13,
+                fontWeight: FontWeight.w800,
+                fontSize: 15,
                 fontFamily: "roboto",
                 color: Color(0XFF59bd99),
               ),
@@ -228,10 +228,10 @@ class FinalQiblaScreen extends StatelessWidget {
               text:
                   'Qibla compass requires  magnetic and accelerometer sensors.requires Your phone will only point in the right direction if those sensors are enabled. Otherwise it won\'t work.',
               style: TextStyle(
-                color: Color(0XFFafb3b7),
-                fontSize: 12,
+                color: Color.fromARGB(255, 158, 159, 160),
+                fontSize: 14,
                 fontFamily: "roboto",
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
                 height: 1.5,
               ),
             ),
