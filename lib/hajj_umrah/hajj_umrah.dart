@@ -202,7 +202,7 @@ class SadaqahBanner extends StatelessWidget {
       margin: const EdgeInsets.all(16.0),
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: AppColors.sadaqahBannerBg,
+        color: Color(0xFFc9f4e5),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Row(
@@ -230,34 +230,35 @@ class SadaqahBanner extends StatelessWidget {
                 ),
                 const SizedBox(height: 10.0),
                 // Button
-                ElevatedButton(
-                  onPressed: () {
-                    // Handle support action
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.sadaqahButtonBg,
-                    foregroundColor: AppColors.sadaqahButtonText,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0,
-                      vertical: 8.0,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6.0),
-                    ),
-                  ),
-                  child: const Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'I Want To Support',
-                        style: TextStyle(
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.w600,
-                        ),
+                Container(
+                  width: 190,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Handle support action
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0XFF36b084),
+                      foregroundColor: AppColors.sadaqahButtonText,
+
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6.0),
                       ),
-                      SizedBox(width: 4.0),
-                      Icon(Icons.arrow_forward, size: 16.0),
-                    ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'I Want To Support',
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            fontFamily: 'roboto',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(width: .0),
+                        Icon(Icons.arrow_forward, size: 20),
+                      ],
+                    ),
                   ),
                 ),
               ],
