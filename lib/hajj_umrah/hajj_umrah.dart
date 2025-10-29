@@ -245,7 +245,7 @@ class SadaqahBanner extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6.0),
                     ),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
@@ -256,7 +256,7 @@ class SadaqahBanner extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 4.0),
-                      SvgPicture.asset('assets/images/sadaqah.svg'),
+                      Icon(Icons.arrow_forward, size: 16.0),
                     ],
                   ),
                 ),
@@ -266,17 +266,15 @@ class SadaqahBanner extends StatelessWidget {
           // Illustration Placeholder (Mosque/Palm Tree)
           // In a real app, this would be an Image.asset widget.
           Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              color: AppColors.sadaqahButtonBg.withOpacity(0.2),
-              shape: BoxShape.circle,
-            ),
-            child: const Center(
-              child: Icon(
-                Icons.mosque,
-                size: 40,
-                color: AppColors.sadaqahButtonBg,
+            width: 160,
+            height: 150,
+
+            child: Center(
+              child: SvgPicture.asset(
+                'assets/images/sadaqah.svg',
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
               ),
             ),
           ),
