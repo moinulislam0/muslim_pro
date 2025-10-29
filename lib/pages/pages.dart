@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design/99_names/99_names.dart';
 import 'package:ui_design/jump_button/jump_button.dart';
+import 'package:ui_design/mosque_location/mosque_location.dart';
 import 'package:ui_design/qibla/qibla.dart';
 import 'package:ui_design/ticktick/ticktick.dart';
 
@@ -53,6 +54,15 @@ class _PagesState extends State<Pages> {
               );
             },
             child: Text('Qibla'), // Simple widget as child
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MosqueFinderScreen()),
+              );
+            },
+            child: Text('Mosque Location'), // Simple widget as child
           ),
         ],
       ),
