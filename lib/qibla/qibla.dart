@@ -79,9 +79,9 @@ class FinalQiblaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: FinalQiblaColors.scaffoldBackground,
+      backgroundColor: Color(0XFFf4f4f4),
       appBar: AppBar(
-        backgroundColor: FinalQiblaColors.scaffoldBackground,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back), // Back arrow
@@ -91,8 +91,9 @@ class FinalQiblaScreen extends StatelessWidget {
         title: Text(
           'Qibla Finder',
           style: TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.w600,
+            fontSize: 22.0,
+            fontFamily: 'poppins',
+            fontWeight: FontWeight.w700,
             color: FinalQiblaColors.mainTextColor,
           ),
         ),
@@ -102,7 +103,7 @@ class FinalQiblaScreen extends StatelessWidget {
         // Use a SingleChildScrollView in case content overflows a small screen
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 30.0),
+            const SizedBox(height: 38.0),
 
             // 1. Compass Widget
             Container(
