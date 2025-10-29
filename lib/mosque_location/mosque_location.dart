@@ -18,11 +18,11 @@ class AppColors {
   // Location/Distance Icon Color: Muted grey/black
   static const Color infoIcon = Color(0xFF888888);
   // Location/Distance Text Color: Slightly lighter than info icon
-  static const Color infoText = Color(0xFF555555);
+  static const Color infoText = Color.fromARGB(255, 51, 61, 70);
   // Open 24Hours Text/Icon Color: Green
-  static const Color openStatus = Color(0xFF28A745);
+  static const Color openStatus = Color.fromARGB(255, 72, 173, 136);
   // Close Now Text/Icon Color: Red
-  static const Color closeStatus = Color(0xFFDC3545);
+  static const Color closeStatus = Color(0xFFf63326);
   // Divider Color: Very light grey
   static const Color dividerColor = Color(0xFFEEEEEE);
   // Button Background: A color that fits the theme
@@ -68,17 +68,17 @@ class InfoRowWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon, size: 22.0, color: iconColor),
+          Icon(icon, size: 20.0, color: iconColor),
           const SizedBox(width: 12.0),
           Expanded(
             child: Text(
               text,
               style: TextStyle(
                 fontFamily: 'roboto',
-                fontSize: 17.0, // Approximation
+                fontSize: 15.0, // Approximation
                 color: textColor,
                 fontWeight: FontWeight.w400, // Approximation
               ),
@@ -115,8 +115,8 @@ class MosqueListItem extends StatelessWidget {
           Text(
             mosque.name,
             style: TextStyle(
-              fontSize: 16.0, // Approximation
-              color: AppColors.mosqueNameText,
+              fontSize: 17.0, // Approximation
+              color: Color(0XFF3d4953),
               fontWeight: FontWeight.w600, // Approximation
             ),
           ),
@@ -207,7 +207,7 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
             // 1. Header Handle/Indicator (Small grey bar at the top center)
             Center(
               child: Container(
-                width: 80.0,
+                width: 60.0,
                 height: 4.0,
                 decoration: BoxDecoration(
                   color: AppColors.dividerColor,
@@ -222,7 +222,7 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
               child: Text(
                 'Mosque Locations',
                 style: TextStyle(
-                  fontSize: 22.0, // Approximation
+                  fontSize: 20.0, // Approximation
                   fontFamily: 'poppins',
                   color: AppColors.titleText,
                   fontWeight: FontWeight.w600, // Approximation
@@ -242,7 +242,7 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
                   // Divider present between list items except after the last one
                   if (index < mosques.length - 1) {
                     return Divider(
-                      color: AppColors.dividerColor,
+                      color: Color.fromARGB(255, 233, 233, 233),
                       height: 1.0,
                       // Add small vertical padding around the divider to match visual spacing
                       thickness: 1.0,
