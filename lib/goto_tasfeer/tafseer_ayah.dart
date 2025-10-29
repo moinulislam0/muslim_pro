@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 // --- Color Constants (Approximated from the image) ---
 class AppColors {
   static const Color primaryDarkBackground = Color(
@@ -19,7 +18,7 @@ class AppColors {
     0xFFD9F3E1,
   ); // Light green for selected item
   static const Color selectedItemText = Color(
-    0xFF2F2F3E,
+    0xFF3d4953,
   ); // Dark text for selected item
   static const Color selectedItemNumber = Color(
     0xFF19A75D,
@@ -98,7 +97,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryDarkBackground,
+      backgroundColor: Colors.black,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -113,7 +112,10 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                 const SizedBox(height: 24.0),
                 _buildSearchTabs(),
                 const SizedBox(height: 16.0),
-                _buildSurahList(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  child: _buildSurahList(),
+                ),
                 const SizedBox(height: 20.0),
                 _buildActionButtons(),
                 const SizedBox(height: 24.0),
@@ -157,12 +159,12 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
 
             // Define colors for name and number
             final Color nameColor = isSelected
-                ? AppColors.selectedItemText
-                : Color(0xFF9E9E9E).withOpacity(opacity);
+                ? const Color.fromARGB(255, 37, 41, 44)
+                : Color.fromARGB(255, 58, 61, 65).withOpacity(opacity);
 
             final Color numberColor = isSelected
-                ? AppColors.selectedItemNumber
-                : Color(0xFFBDBDBD).withOpacity(opacity);
+                ? Color(0XFF3d4953)
+                : Color.fromARGB(255, 58, 61, 65).withOpacity(opacity);
 
             return GestureDetector(
               onTap: () {
@@ -179,7 +181,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? AppColors.selectedItemBackground
+                      ? Color.fromARGB(255, 226, 241, 236)
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -193,7 +195,8 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                     Text(
                       item.name,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
+                        fontFamily: 'roboto',
                         fontWeight: isSelected
                             ? FontWeight.w700
                             : FontWeight.w500,
@@ -203,7 +206,8 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                     Text(
                       item.ayahNumber,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
+                        fontFamily: 'roboto',
                         fontWeight: isSelected
                             ? FontWeight.w700
                             : FontWeight.w400,
@@ -233,11 +237,14 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.titleText,
+                    color: AppColors.inputLabel,
                   ),
                 ),
                 const SizedBox(height: 4.0),
-                Container(height: 2.0, color: AppColors.buttonColor),
+                Container(
+                  height: 2.0,
+                  color: AppColors.inputLabel.withOpacity(0.5),
+                ),
               ],
             ),
           ),
@@ -291,7 +298,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.buttonColor,
+        backgroundColor: Color(0XFF36b084),
         foregroundColor: Colors.white,
         minimumSize: const Size(double.infinity, 50),
         padding: const EdgeInsets.symmetric(vertical: 14.0),
