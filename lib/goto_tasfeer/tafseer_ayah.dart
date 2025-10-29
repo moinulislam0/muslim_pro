@@ -237,7 +237,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
-                    color: AppColors.inputLabel,
+                    color: Color(0XFF3d4953),
                   ),
                 ),
                 const SizedBox(height: 4.0),
@@ -257,7 +257,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.inputLabel,
+                    color: Color(0XFF3d4953),
                   ),
                 ),
                 const SizedBox(height: 6.0),
