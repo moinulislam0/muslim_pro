@@ -69,14 +69,16 @@ class InfoRowWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon, size: 18.0, color: iconColor),
-          const SizedBox(width: 8.0),
+          Icon(icon, size: 22.0, color: iconColor),
+          const SizedBox(width: 12.0),
           Expanded(
             child: Text(
               text,
               style: TextStyle(
-                fontSize: 13.0, // Approximation
+                fontFamily: 'roboto',
+                fontSize: 17.0, // Approximation
                 color: textColor,
                 fontWeight: FontWeight.w400, // Approximation
               ),
