@@ -28,64 +28,66 @@ class AppColors {
 // --- Data Model ---
 class HajjUmrahCategory {
   final String title;
-  // Using a placeholder icon or string to represent the custom illustration
-  final IconData icon;
+  // IconData theke String e poriborton kora hoyeche SVG asset path rakhar jonno
+  final String image;
   final Color iconColor;
 
   HajjUmrahCategory({
     required this.title,
-    required this.icon,
+    required this.image, // ekhon 'image'
     required this.iconColor,
   });
 }
 
-// --- Dummy Data ---
+// --- Dummy Data (Corrected) ---
+// Proti-ta 'icon' ke 'image' diye replace kora hoyeche ebong placeholder path deya hoyeche
 final List<HajjUmrahCategory> categories = [
   HajjUmrahCategory(
     title: 'Kitabul Hajj',
-    icon: Icons.account_balance,
+    image: 'assets/images/kitabul.svg', // Placeholder path
     iconColor: const Color(0xFF795548),
-  ), // Brown-ish for Kaaba
+  ),
   HajjUmrahCategory(
     title: 'Illustrated Hajj',
-    icon: Icons.person,
+    image:
+        'assets/images/illustrated_hajj.svg', // Missing value thik kora hoyeche
     iconColor: const Color(0xFF9E9E9E),
-  ), // Gray for Ihram person
+  ),
   HajjUmrahCategory(
     title: 'Umrah',
-    icon: Icons.account_balance_outlined,
+    image: 'assets/images/umrah.svg', // Placeholder path
     iconColor: const Color(0xFF795548),
-  ), // Brown-ish for Kaaba
+  ),
   HajjUmrahCategory(
     title: 'Illustrated Umrah',
-    icon: Icons.book_online,
+    image: 'assets/images/illustrated_umrah.svg', // Placeholder path
     iconColor: const Color(0xFF795548),
-  ), // Brown-ish for Kaaba
+  ),
   HajjUmrahCategory(
     title: 'Dua',
-    icon: Icons.add,
+    image: 'assets/images/dua.svg', // Placeholder path
     iconColor: const Color(0xFF9E9E9E),
-  ), // Gray for hands
+  ),
   HajjUmrahCategory(
     title: 'Hadith',
-    icon: Icons.book,
+    image: 'assets/images/hadith.svg', // Placeholder path
     iconColor: const Color(0xFF4CAF50),
-  ), // Green for book
+  ),
   HajjUmrahCategory(
     title: 'Masail',
-    icon: Icons.chat_bubble,
+    image: 'assets/images/masail.svg', // Placeholder path
     iconColor: const Color(0xFFFFC107),
-  ), // Yellow for chat
+  ),
   HajjUmrahCategory(
     title: 'Qitab',
-    icon: Icons.library_books,
+    image: 'assets/images/qitab.svg', // Placeholder path
     iconColor: const Color(0xFF9C27B0),
-  ), // Purple for stacked books
+  ),
   HajjUmrahCategory(
     title: 'Hajj Videos',
-    icon: Icons.play_arrow,
+    image: 'assets/images/hajj_video.svg', // Placeholder path
     iconColor: const Color(0xFFFF9800),
-  ), // Orange for play button
+  ),
 ];
 
 // --- Reusable Widgets ---
@@ -135,7 +137,7 @@ class IllustrationBanner extends StatelessWidget {
         width: double.infinity,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12.0),
-          child: Image.asset("assets/images/banner_1.png", fit: BoxFit.cover),
+          child: Image.asset("assets/images/banner_1.png", fit: BoxFit.contain),
         ),
       ),
     );
@@ -157,11 +159,21 @@ class CategoryItem extends StatelessWidget {
         children: [
           const SizedBox(height: 14.0),
           // Icon Placeholder (Mimicking the flat, colored illustration style)
-          Container(
+          SizedBox(
+            // Container ke SizedBox diye replace kora holo better practice hishebe
             width: 50.0, // Estimated icon container size
             height: 50.0,
-
-            child: SvgPicture.asset(""),
+            child: SvgPicture.asset(
+              category.image, // Ekhon 'image' property-ti pawa jacche
+              width: 28.0,
+              height: 28.0,
+              fit: BoxFit.contain,
+              placeholderBuilder: (BuildContext context) => const Icon(
+                Icons.image_not_supported,
+                size: 28.0,
+                color: AppColors.iconLabelText,
+              ),
+            ),
           ),
           const SizedBox(height: 8.0),
           // Label Text
@@ -233,7 +245,7 @@ class SadaqahBanner extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6.0),
                     ),
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
@@ -244,7 +256,7 @@ class SadaqahBanner extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 4.0),
-                      Icon(Icons.arrow_forward, size: 16.0),
+                      SvgPicture.asset('assets/images/sadaqah.svg'),
                     ],
                   ),
                 ),
