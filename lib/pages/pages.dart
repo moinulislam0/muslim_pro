@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design/99_names/99_names.dart';
+import 'package:ui_design/goto_tasfeer/tafseer_ayah.dart';
 import 'package:ui_design/hajj_umrah/hajj_umrah.dart';
 import 'package:ui_design/halal_place/halal_place.dart';
 import 'package:ui_design/jump_button/jump_button.dart';
@@ -84,6 +85,15 @@ class _PagesState extends State<Pages> {
                 );
               },
               child: Text('Hajj & Ummrah'), // Simple widget as child
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => QuranSearchScreen()),
+                );
+              },
+              child: Text('Quran Search'), // Simple widget as child
             ),
           ],
         ),
