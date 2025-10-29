@@ -161,8 +161,7 @@ class CategoryItem extends StatelessWidget {
             width: 50.0, // Estimated icon container size
             height: 50.0,
 
-           
-            child:SvgPicture.asset("")
+            child: SvgPicture.asset(""),
           ),
           const SizedBox(height: 8.0),
           // Label Text
