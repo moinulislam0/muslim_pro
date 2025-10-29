@@ -95,15 +95,14 @@ final List<HajjUmrahCategory> categories = [
 /// Widget for the Top App Bar
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(75);
 
   const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 90,
-
+      toolbarHeight: 80,
       backgroundColor: AppColors.appBarBackground,
       elevation: 0,
       title: const Text(
