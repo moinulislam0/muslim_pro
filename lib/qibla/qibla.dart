@@ -107,9 +107,9 @@ class FinalQiblaScreen extends StatelessWidget {
             // 1. Compass Widget
             Container(
               child: SvgPicture.asset(
-                'assets/images/group.svg',
+                'assets/images/compas.svg',
                 fit: BoxFit.cover,
-                height: 330,
+                height: 360,
                 width: 305,
                 alignment: Alignment.center,
 
@@ -117,12 +117,12 @@ class FinalQiblaScreen extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 80.0),
+            const SizedBox(height: 50.0),
 
             // 2. Location Bar
             _buildLocationBar(),
 
-            const SizedBox(height: 50.0),
+            const SizedBox(height: 60.0),
 
             // 3. Instruction Box
             _buildInstructionBox(),
@@ -132,7 +132,7 @@ class FinalQiblaScreen extends StatelessWidget {
             // 4. Note Text
             _buildNoteText(),
 
-            const SizedBox(height: 30.0), // Extra space at the bottom
+            const SizedBox(height: 90.0), // Extra space at the bottom
           ],
         ),
       ),
