@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_design/99_names/99_names.dart';
+import 'package:ui_design/halal_place/halal_place.dart';
 import 'package:ui_design/jump_button/jump_button.dart';
 import 'package:ui_design/mosque_location/mosque_location.dart';
 import 'package:ui_design/qibla/qibla.dart';
@@ -63,6 +64,15 @@ class _PagesState extends State<Pages> {
               );
             },
             child: Text('Mosque Location'), // Simple widget as child
+          ),
+           ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HalalPlace()),
+              );
+            },
+            child: Text('HalalPlace'), // Simple widget as child
           ),
         ],
       ),
