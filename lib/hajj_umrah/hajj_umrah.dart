@@ -102,15 +102,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: false,
+      toolbarHeight: 90,
+
       backgroundColor: AppColors.appBarBackground,
       elevation: 0,
       title: const Text(
         'Hajj & Umrah',
         style: TextStyle(
-          color: AppColors.appBarText,
-          fontSize: 20.0,
-          fontWeight: FontWeight.w600,
+          color: Color(0XFF3d4953),
+          fontFamily: "poppins",
+          fontSize: 22.0,
+          fontWeight: FontWeight.w700,
         ),
       ),
       centerTitle: true,
@@ -181,8 +183,9 @@ class CategoryItem extends StatelessWidget {
             category.title,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: AppColors.iconLabelText,
-              fontSize: 12.0, // Small font size
+              color: Color.fromARGB(255, 55, 66, 75),
+              fontFamily: 'roboto',
+              fontSize: 14.0, // Small font size
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -200,7 +203,7 @@ class SadaqahBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(16.0),
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(left: 16, right: 10, top: 10, bottom: 8),
       decoration: BoxDecoration(
         color: Color(0xFFc9f4e5),
         borderRadius: BorderRadius.circular(12.0),
@@ -214,21 +217,23 @@ class SadaqahBanner extends StatelessWidget {
                 Text(
                   'BE A PART OF',
                   style: TextStyle(
-                    color: AppColors.iconLabelText,
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
+                    color: Color(0XFF3d4953),
+                    fontSize: 21.0,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "poppins",
                   ),
                 ),
-                const SizedBox(height: 2.0),
+
                 Text(
                   'SADAQAH JARIYAH',
                   style: TextStyle(
                     color: AppColors.sadaqahButtonBg,
-                    fontSize: 22.0, // Large, bold text
-                    fontWeight: FontWeight.w900, // Extra bold
+                    fontSize: 21.0, // Large, bold text
+                    fontWeight: FontWeight.w700,
+                    fontFamily: "poppins", // Extra bold
                   ),
                 ),
-                const SizedBox(height: 10.0),
+                const SizedBox(height: 20.0),
                 // Button
                 Container(
                   width: 190,
@@ -238,7 +243,7 @@ class SadaqahBanner extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0XFF36b084),
-                      foregroundColor: AppColors.sadaqahButtonText,
+                      foregroundColor: Color.fromARGB(255, 255, 255, 255),
 
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(6.0),
@@ -305,7 +310,7 @@ class HajjUmrahScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.only(top: 8.0),
           children: [
-            SizedBox(height: 15),
+            SizedBox(height: 10),
             // 1. Illustration Banner
             const IllustrationBanner(),
 
@@ -332,7 +337,7 @@ class HajjUmrahScreen extends StatelessWidget {
                     mainAxisSpacing:
                         4.0, // Row gulo'r majhe halka gap deyar jonno.
                     childAspectRatio:
-                        1.2, // Item-ke choto kore gap komano'r jonno.
+                        1.1, // Item-ke choto kore gap komano'r jonno.
                     // --- PORIBORTON SHESH ---
                   ),
                   itemCount: categories.length,
@@ -343,12 +348,12 @@ class HajjUmrahScreen extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 4.0),
 
             // 3. Sadaqah Jariyah Banner
             const SadaqahBanner(),
 
-            const SizedBox(height: 20.0), // Final spacing
+            const SizedBox(height: 80.0), // Final spacing
           ],
         ),
       ),
