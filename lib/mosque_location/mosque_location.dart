@@ -21,7 +21,7 @@ class AppColors {
   // Location/Distance Text Color: Slightly lighter than info icon
   static const Color infoText = Color.fromARGB(255, 51, 61, 70);
   // Open 24Hours Text/Icon Color: Green
-  static const Color openStatus = Color.fromARGB(255, 72, 173, 136);
+  static const Color openStatus = Color.fromARGB(255, 50, 161, 120);
   // Close Now Text/Icon Color: Red
   static const Color closeStatus = Color(0xFFf63326);
   // Divider Color: Very light grey
