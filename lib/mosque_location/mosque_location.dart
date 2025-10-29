@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // --- Color Constants (Approximated from Image) ---
 class AppColors {
@@ -16,7 +17,7 @@ class AppColors {
   // Mosque Name Text: Darker black/purple-ish
   static const Color mosqueNameText = Color(0xFF3D2B4C);
   // Location/Distance Icon Color: Muted grey/black
-  static const Color infoIcon = Color(0xFF888888);
+  static const Color infoIcon = Color(0XFF49545e); // Color(0xFF888888);
   // Location/Distance Text Color: Slightly lighter than info icon
   static const Color infoText = Color.fromARGB(255, 51, 61, 70);
   // Open 24Hours Text/Icon Color: Green
@@ -24,7 +25,7 @@ class AppColors {
   // Close Now Text/Icon Color: Red
   static const Color closeStatus = Color(0xFFf63326);
   // Divider Color: Very light grey
-  static const Color dividerColor = Color(0xFFEEEEEE);
+  static const Color dividerColor = Color(0xFFF4F4F4);
   // Button Background: A color that fits the theme
   static const Color buttonBackground = Color(0xFF6200EE);
 }
@@ -50,7 +51,7 @@ class Mosque {
 
 /// Custom widget for the icon and text pair (Location, Distance, Status)
 class InfoRowWidget extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String text;
   final Color iconColor;
   final Color textColor;
@@ -71,7 +72,7 @@ class InfoRowWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon, size: 20.0, color: iconColor),
+          SvgPicture.asset(icon, height: 18.0, width: 20, color: iconColor),
           const SizedBox(width: 12.0),
           Expanded(
             child: Text(
@@ -124,23 +125,23 @@ class MosqueListItem extends StatelessWidget {
 
           // 2. Location Info
           InfoRowWidget(
-            icon: Icons.location_on,
+            icon: 'assets/images/location.svg',
             text: mosque.location,
             iconColor: AppColors.infoIcon,
             textColor: AppColors.infoText,
           ),
-
+          const SizedBox(height: 6.0),
           // 3. Distance Info
           InfoRowWidget(
-            icon: Icons.navigation,
+            icon: "assets/images/distance.svg",
             text: mosque.distance,
             iconColor: AppColors.infoIcon,
             textColor: AppColors.infoText,
           ),
-
+          const SizedBox(height: 6.0),
           // 4. Status Info
           InfoRowWidget(
-            icon: statusIcon,
+            icon: "assets/images/timer_mos.svg",
             text: mosque.status,
             iconColor: statusColor,
             textColor: statusColor,
@@ -188,8 +189,9 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
         name: 'West Nandi para Al Aqsa Mosque',
         location:
             'Banasree Central Mosque, Dhaka 1212, Banasree Central Mosque, Dhaka 1212',
-        distance: '', // No distance visible for the last one
-        status: '', // No status visible for the last one
+        distance: '1 Km', // No distance visible for the last one
+        status: 'Close Now',
+        isClosed: true,
       ),
     ];
 
@@ -243,7 +245,7 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
                   if (index < mosques.length - 1) {
                     return Divider(
                       color: Color.fromARGB(255, 233, 233, 233),
-                      height: 1.0,
+                      height: .2,
                       // Add small vertical padding around the divider to match visual spacing
                       thickness: 1.0,
                     );
