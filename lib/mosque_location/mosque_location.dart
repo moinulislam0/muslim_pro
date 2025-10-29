@@ -192,10 +192,10 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
     ];
 
     return Container(
-      height: MediaQuery.of(context).size.height * 0.85,
+      height: MediaQuery.of(context).size.height * 0.91,
       decoration: BoxDecoration(
         color: AppColors.cardBackground,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(24.0)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(28.0)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 16.0),
@@ -205,7 +205,7 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
             // 1. Header Handle/Indicator (Small grey bar at the top center)
             Center(
               child: Container(
-                width: 40.0,
+                width: 80.0,
                 height: 4.0,
                 decoration: BoxDecoration(
                   color: AppColors.dividerColor,
@@ -216,12 +216,15 @@ class MosqueLocationsBottomSheet extends StatelessWidget {
             const SizedBox(height: 12.0),
 
             // 2. "Mosque Locations" Title
-            Text(
-              'Mosque Locations',
-              style: TextStyle(
-                fontSize: 18.0, // Approximation
-                color: AppColors.titleText,
-                fontWeight: FontWeight.w600, // Approximation
+            Center(
+              child: Text(
+                'Mosque Locations',
+                style: TextStyle(
+                  fontSize: 22.0, // Approximation
+                  fontFamily: 'poppins',
+                  color: AppColors.titleText,
+                  fontWeight: FontWeight.w600, // Approximation
+                ),
               ),
             ),
             const SizedBox(height: 16.0),
