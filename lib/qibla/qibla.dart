@@ -38,8 +38,8 @@ class KaabaIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Using an icon that resembles a structure/building for the Kaaba
-    return SvgPicture.asset(
-      "assets/images/group.svg",
+    return Image.asset(
+      "assets/images/macca.png",
       fit: BoxFit.contain,
       height: 26,
       width: 26,
@@ -149,7 +149,10 @@ class FinalQiblaScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             8.0,
           ), // Slightly less pill-shaped than before
-          border: Border.all(color: Colors.black.withOpacity(0.05), width: 1.0),
+          border: Border.all(
+            color: Color.fromARGB(255, 209, 229, 223),
+            width: 1.0,
+          ),
         ),
 
         child: Row(
@@ -185,11 +188,11 @@ class FinalQiblaScreen extends StatelessWidget {
       child: Column(
         children: <Widget>[
           // Infinity Icon
-          SvgPicture.asset(
-            'assets/images/calendar.svg',
+          Image.asset(
+            'assets/images/trangle.png',
             fit: BoxFit.cover,
-            height: 30,
-            width: 87,
+            height: 35,
+            width: 110,
           ),
           const SizedBox(height: 16.0),
           // Instruction Text
