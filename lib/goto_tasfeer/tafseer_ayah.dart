@@ -103,7 +103,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Container(
             decoration: BoxDecoration(
-              color: AppColors.mainCardBackground,
+              color: Color(0XFFffffff),
               borderRadius: BorderRadius.circular(16.0),
             ),
             child: Column(
@@ -180,9 +180,7 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
               child: Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: isSelected
-                      ? Color.fromARGB(255, 226, 241, 236)
-                      : Colors.transparent,
+                  color: isSelected ? Color(0XFFebf7f3) : Colors.transparent,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 padding: const EdgeInsets.symmetric(
@@ -235,14 +233,15 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                 Text(
                   'Search Name',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
+                    fontFamily: "poppins",
                     fontWeight: FontWeight.w600,
                     color: Color(0XFF3d4953),
                   ),
                 ),
-                const SizedBox(height: 4.0),
+                const SizedBox(height: 12.0),
                 Container(
-                  height: 2.0,
+                  height: 1.0,
                   color: AppColors.inputLabel.withOpacity(0.5),
                 ),
               ],
@@ -255,12 +254,13 @@ class _QuranSearchScreenState extends State<QuranSearchScreen> {
                 Text(
                   'Type Ayah',
                   style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 14,
+                    fontFamily: "poppins",
+                    fontWeight: FontWeight.w600,
                     color: Color(0XFF3d4953),
                   ),
                 ),
-                const SizedBox(height: 6.0),
+                const SizedBox(height: 12.0),
                 Container(
                   height: 1.0,
                   color: AppColors.inputLabel.withOpacity(0.5),
