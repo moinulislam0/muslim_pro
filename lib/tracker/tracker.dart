@@ -23,29 +23,28 @@ class CalendarScreen extends StatelessWidget {
 
   static const TextStyle _dayAbbreviationStyle = TextStyle(
     fontSize: 14.0, // Approximately 12-14px
-    color: Color(0XFF9da3a8),
+    color: Color(0xFF9da3a8),
     fontWeight: FontWeight.w600,
-
     fontFamily: 'roboto',
   );
 
   static const TextStyle _dateStyle = TextStyle(
     fontSize: 16.0, // Approximately 16-18px
-    color: Color(0XFF3d4953),
+    color: Color(0xFF3d4953),
     fontWeight: FontWeight.w500,
     fontFamily: 'poppins',
   );
 
   static const TextStyle _selectedDayAbbreviationStyle = TextStyle(
     fontSize: 14.0, // Approximately 12-14px
-    color: Color(0XFF3d4953),
+    color: Color(0xFF3d4953),
     fontWeight: FontWeight.w600,
     fontFamily: 'poppins',
   );
 
   static const TextStyle _selectedDateTextStyle = TextStyle(
     fontSize: 16.0, // Approximately 16-18px
-    color: Color(0XFF3d4953),
+    color: Color(0xFF3d4953),
     fontWeight: FontWeight.w500,
     fontFamily: 'poppins',
   );
@@ -61,7 +60,7 @@ class CalendarScreen extends StatelessWidget {
         // Add your tap handling logic here if needed
       },
       child: Container(
-        height: 80, // Give it a fixed height
+        height: 100, // Give it a fixed height
         width: 50, // Give it a fixed width
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -70,13 +69,13 @@ class CalendarScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 11.0,
-                  horizontal: 12.0,
+                  horizontal: 13.0,
                 ), // 6px vertical, 8px horizontal
                 decoration: BoxDecoration(
-                  color: Color(0XFFf5fbf9), // rgba(52, 199, 89, 0.1)
+                  color: Color(0xFFf5fbf9), // rgba(52, 199, 89, 0.1)
                   border: Border.all(
-                    color: Color(0XFF36b084),
-                    width: 1.8,
+                    color: Color(0xFF36b084),
+                    width: 1.9,
                   ), // 1px solid Vibrant Green
                   borderRadius: BorderRadius.circular(
                     10.0,
@@ -122,129 +121,122 @@ class CalendarScreen extends StatelessWidget {
             fontSize: 22.0, // Approximately 18-20px
             fontWeight: FontWeight.w700, // Semi-bold
             fontFamily: 'poppins',
-            color: Color(0XFF3d4953),
+            color: Color(0xFF3d4953),
           ),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0.0,
         bottom: PreferredSize(
-          // Step 1: Nirdishto height deyar jonno PreferredSize widget
-          preferredSize: const Size.fromHeight(.1), // Line-er height hobe 1.0
-          // Step 2: Line toiri korar jonno ekta Container
-          child: Container(
-            color: Color(0XFFf4f4f4), // Line-er color
-            height: 1.8, // Line-er height
-          ),
-        ), // No shadow
+          preferredSize: Size.fromHeight(1.0),
+          child: Container(color: Color(0XFFf4f4f4), height: 2.0),
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20.0,
-          vertical: 40.0,
-        ), // Overall padding for the widget
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-              children: [
-                Text(
-                  "2023",
-                  style: _monthTextStyle.copyWith(
-                    fontFamily: "poppins",
-                    color: Color.fromARGB(255, 55, 66, 75),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w600, // Semi-bold
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16, top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "2023",
+                    style: _monthTextStyle.copyWith(
+                      fontFamily: "poppins",
+                      color: Color(0xFF37424b),
+                      fontSize: 36,
+                      fontWeight: FontWeight.w600, // Semi-bold
+                    ),
                   ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "Change Calendar",
-                      style: TextStyle(
-                        color: Color(0XFF36b084),
-                        fontSize: 15,
-                        fontFamily: 'roboto',
-                        fontWeight: FontWeight.w500,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Change Calendar",
+                        style: TextStyle(
+                          color: Color(0xFF36b084),
+                          fontSize: 15,
+                          fontFamily: 'roboto',
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                    Text(
-                      "English",
-                      style: TextStyle(
-                        fontFamily: 'poppins',
-                        fontSize: 17,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0XFF3d4953),
+                      const SizedBox(height: 5),
+                      Text(
+                        "English",
+                        style: TextStyle(
+                          fontFamily: 'poppins',
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF3d4953),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 20.0),
             // 1. Month Navigation Header
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "February",
-                  style: _monthTextStyle.copyWith(
-                    fontWeight: FontWeight.w600, // Semi-bold
-                    color: Color(0XFF36b084),
-                    fontFamily: "poppins",
-                    fontSize: 22,
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "February",
+                    style: _monthTextStyle.copyWith(
+                      fontWeight: FontWeight.w600, // Semi-bold
+                      color: Color(0xFF36b084),
+                      fontFamily: "poppins",
+                      fontSize: 22,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  width: 16.0,
-                ), // Consistent horizontal spacing between month names
-                Text(
-                  "March",
-                  style: _monthTextStyle.copyWith(
-                    color: Color.fromARGB(255, 200, 204, 207),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-
-                    fontFamily: "poppins",
+                  const SizedBox(
+                    width: 16.0,
+                  ), // Consistent horizontal spacing between month names
+                  Text(
+                    "March",
+                    style: _monthTextStyle.copyWith(
+                      color: Color(0xFFC8CCCF),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "poppins",
+                    ),
                   ),
-                ),
-                const SizedBox(width: 16.0),
-                Text(
-                  "April",
-                  style: _monthTextStyle.copyWith(
-                    color: Color.fromARGB(255, 200, 204, 207),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-
-                    fontFamily: "poppins",
+                  const SizedBox(width: 16.0),
+                  Text(
+                    "April",
+                    style: _monthTextStyle.copyWith(
+                      color: Color(0xFFC8CCCF),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "poppins",
+                    ),
                   ),
-                ),
-                const SizedBox(width: 16.0),
-                Text(
-                  "May",
-                  style: _monthTextStyle.copyWith(
-                    color: Color.fromARGB(255, 200, 204, 207),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-
-                    fontFamily: "poppins",
+                  const SizedBox(width: 16.0),
+                  Text(
+                    "May",
+                    style: _monthTextStyle.copyWith(
+                      color: Color(0xFFC8CCCF),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "poppins",
+                    ),
                   ),
-                ),
-                const SizedBox(width: 16.0),
-                Text(
-                  "June",
-                  style: _monthTextStyle.copyWith(
-                    color: Color.fromARGB(255, 200, 204, 207),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-
-                    fontFamily: "poppins",
+                  const SizedBox(width: 16.0),
+                  Text(
+                    "June",
+                    style: _monthTextStyle.copyWith(
+                      color: Color(0xFFC8CCCF),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "poppins",
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(
               height: 24.0,
@@ -268,11 +260,154 @@ class CalendarScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16.0),
+            Container(
+              height: MediaQuery.of(context).size.height - 400,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Color(0XFFf4f4f4),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(24),
+                  topRight: Radius.circular(24),
+                ),
+              ),
 
-            // Add the tasks section back with proper scrolling
+              // --- PORIBORTON EKHANE ---
+              // Padding-tike baire-er Container-e ana hoyeche, jate bhitorer shada card-er charpashe halka grey jaiga dekha jay.
+              // padding: const EdgeInsets.fromLTRB(
+              //   16.0,
+              //   16.0,
+              //   16.0,
+              //   0,
+              // ), // Niche padding 0 rakha holo
+              // --- PORIBORTON SHESH ---
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  bottom: 90,
+                  top: 26,
+                ),
+                child: Container(
+                  // Bhitorer Container theke padding shoriye fela hoyeche
+                  padding: const EdgeInsets.only(
+                    left: 16,
+                    right: 16,
+                    top: 26,
+                  ), // Padding ekhon shada card er vitorer content er jonno
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16.0), // Golakar corner
+                  ),
+                  child: Column(
+                    children: [
+                      // 1. Header Section (Arrow, Title, Arrow)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // Bam pasher Back Arrow
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color(0xFFf2f9f7),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons
+                                    .arrow_back_ios_new, // Notun icon better look er jonno
+                                size: 16,
+                                color: Color(0XFF36b084),
+                              ),
+                            ),
+                          ),
+
+                          // Majhkhane Title
+                          Text(
+                            "My Todays Prayer",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontFamily: "poppins",
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87,
+                            ),
+                          ),
+
+                          // Dan pasher Forward Arrow
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color(0xFFf2f9f7),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 16,
+                                color: Color(0XFF36b084),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 24.0),
+                      Divider(color: Color(0XFFf4f4f4), height: 1),
+
+                      const SizedBox(
+                        height: 10.0,
+                      ), // Header ebong list er majhe faka jaiga
+                      // 2. Prayer List Section
+                      _buildPrayerRow("Fazr", isCompleted: true),
+                      _buildPrayerRow("Dhuhr"),
+                      _buildPrayerRow("Asr"),
+                      _buildPrayerRow("Magrib"),
+                      _buildPrayerRow("Isha's"),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget _buildPrayerRow(String prayerName, {bool isCompleted = false}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 12.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          prayerName,
+          style: TextStyle(
+            fontSize: isCompleted ? 18 : 16,
+            fontWeight: isCompleted ? FontWeight.w700 : FontWeight.w500,
+            color: isCompleted ? Color(0XFF3d4953) : Color(0XFF3d4953),
+            fontFamily: 'roboto',
+          ),
+        ),
+        Container(
+          height: 25,
+          width: 25,
+
+          decoration: BoxDecoration(
+            border: isCompleted
+                ? null
+                : Border.all(color: Color(0XFFdadddf), width: 1.5),
+            borderRadius: BorderRadius.circular(50),
+            color: isCompleted ? Color(0XFF36b084) : Colors.white,
+          ),
+          child: Icon(
+            Icons.check,
+            size: 20,
+            color: isCompleted ? Colors.white : Color(0XFFdadddf),
+          ),
+        ),
+      ],
+    ),
+  );
 }
