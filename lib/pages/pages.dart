@@ -8,6 +8,7 @@ import 'package:ui_design/mosque_location/mosque_location.dart';
 import 'package:ui_design/qibla/qibla.dart';
 import 'package:ui_design/share_on/share_on.dart';
 import 'package:ui_design/ticktick/ticktick.dart';
+import 'package:ui_design/tracker/tracker.dart';
 
 class Pages extends StatefulWidget {
   const Pages({super.key});
@@ -104,6 +105,15 @@ class _PagesState extends State<Pages> {
                 );
               },
               child: Text('ShareScreen'), // Simple widget as child
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CalendarScreen()),
+                );
+              },
+              child: Text('TrackerScreen'), // Simple widget as child
             ),
           ],
         ),
