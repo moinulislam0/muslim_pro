@@ -57,7 +57,7 @@ class ShareScreen extends StatelessWidget {
                 fontSize: 16, // Inferred size
                 fontWeight: FontWeight.w400,
                 fontFamily: "roboto", // Regular weight
-                color: AppColors.textPrimary,
+                color: Color(0XFF6F767D),
               ),
             ),
             const SizedBox(width: 12.0), // Spacing between text and first icon
@@ -65,18 +65,21 @@ class ShareScreen extends StatelessWidget {
             _buildSocialIcon(
               icon:
                   "assets/images/facebook.svg", // Using generic icon for Facebook 'f'
+              onTap: () {},
             ),
             const SizedBox(width: 10.0), // Spacing between icons (inferred)
 
             _buildSocialIcon(
               icon:
                   "assets/images/linkedin.svg", // Using 'in' for LinkedIn approximation
+              onTap: () {},
             ),
             const SizedBox(width: 10.0), // Spacing between icons (inferred)
 
             _buildSocialIcon(
               icon:
                   "assets/images/twitter.svg", // Using generic icon for Twitter bird
+              onTap: () {},
             ),
           ],
         ),
@@ -85,20 +88,23 @@ class ShareScreen extends StatelessWidget {
   }
 
   // Helper for Social Media Icon Button
-  Widget _buildSocialIcon({required String icon}) {
-    return Container(
-      width: 36.0, // Inferred circular button size
-      height: 36.0, // Inferred circular button size
+  Widget _buildSocialIcon({required String icon, required VoidCallback onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 36.0, // Inferred circular button size
+        height: 36.0, // Inferred circular button size
 
-      child: Center(
-        child: SvgPicture.asset(
-          icon,
-          fit: BoxFit.cover,
+        child: Center(
+          child: SvgPicture.asset(
+            icon,
+            fit: BoxFit.cover,
 
-          height: 28.0,
-          width: 28.0,
+            height: 28.0,
+            width: 28.0,
 
-          // Inferred icon size
+            // Inferred icon size
+          ),
         ),
       ),
     );
