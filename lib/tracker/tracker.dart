@@ -143,164 +143,134 @@ class CalendarScreen extends StatelessWidget {
           horizontal: 20.0,
           vertical: 40.0,
         ), // Overall padding for the widget
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                children: [
-                  Text(
-                    "2023",
-                    style: _monthTextStyle.copyWith(
-                      fontFamily: "poppins",
-                      color: Color.fromARGB(255, 55, 66, 75),
-                      fontSize: 36,
-                      fontWeight: FontWeight.w600, // Semi-bold
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Change Calendar",
-                        style: TextStyle(
-                          color: Color(0XFF36b084),
-                          fontSize: 15,
-                          fontFamily: 'roboto',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Text(
-                        "English",
-                        style: TextStyle(
-                          fontFamily: 'poppins',
-                          fontSize: 17,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0XFF3d4953),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              // 1. Month Navigation Header
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "February",
-                    style: _monthTextStyle.copyWith(
-                      fontWeight: FontWeight.w600, // Semi-bold
-                      color: Color(0XFF36b084),
-                      fontFamily: "poppins",
-                      fontSize: 22,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 16.0,
-                  ), // Consistent horizontal spacing between month names
-                  Text(
-                    "March",
-                    style: _monthTextStyle.copyWith(
-                      color: Color.fromARGB(255, 200, 204, 207),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-
-                      fontFamily: "poppins",
-                    ),
-                  ),
-                  const SizedBox(width: 16.0),
-                  Text(
-                    "April",
-                    style: _monthTextStyle.copyWith(
-                      color: Color.fromARGB(255, 200, 204, 207),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-
-                      fontFamily: "poppins",
-                    ),
-                  ),
-                  const SizedBox(width: 16.0),
-                  Text(
-                    "May",
-                    style: _monthTextStyle.copyWith(
-                      color: Color.fromARGB(255, 200, 204, 207),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-
-                      fontFamily: "poppins",
-                    ),
-                  ),
-                  const SizedBox(width: 16.0),
-                  Text(
-                    "June",
-                    style: _monthTextStyle.copyWith(
-                      color: Color.fromARGB(255, 200, 204, 207),
-                      fontSize: 17,
-                      fontWeight: FontWeight.w500,
-
-                      fontFamily: "poppins",
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 24.0,
-              ), // Spacing between month header and date grid
-              // 2. Date Grid
-              Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceAround, // Distribute columns evenly
-                children: [
-                  _buildDayDateColumn("S", "14"),
-                  _buildDayDateColumn("M", "15"),
-                  _buildDayDateColumn(
-                    "T",
-                    "16",
-                    isSelected: true,
-                  ), // Selected date
-                  _buildDayDateColumn("W", "17"),
-                  _buildDayDateColumn("T", "18"),
-                  _buildDayDateColumn("F", "19"),
-                  _buildDayDateColumn("S", "20"),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Color(0XFFf4f4f4),
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                child: Container(
-                  height: 200, // Give it a fixed height
-                  width: 300,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Column(
-                      children: [
-                        Text(
-                          "Today's Tasks",
-                          style: TextStyle(
-                            fontFamily: "poppins",
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0XFF3d4953),
-                          ),
-                        ),
-                        Text("0/5", style: TextStyle()),
-                      ],
-                    ),
+              children: [
+                Text(
+                  "2023",
+                  style: _monthTextStyle.copyWith(
+                    fontFamily: "poppins",
+                    color: Color.fromARGB(255, 55, 66, 75),
+                    fontSize: 36,
+                    fontWeight: FontWeight.w600, // Semi-bold
                   ),
                 ),
-              ),
-            ],
-          ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      "Change Calendar",
+                      style: TextStyle(
+                        color: Color(0XFF36b084),
+                        fontSize: 15,
+                        fontFamily: 'roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "English",
+                      style: TextStyle(
+                        fontFamily: 'poppins',
+                        fontSize: 17,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0XFF3d4953),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            // 1. Month Navigation Header
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "February",
+                  style: _monthTextStyle.copyWith(
+                    fontWeight: FontWeight.w600, // Semi-bold
+                    color: Color(0XFF36b084),
+                    fontFamily: "poppins",
+                    fontSize: 22,
+                  ),
+                ),
+                const SizedBox(
+                  width: 16.0,
+                ), // Consistent horizontal spacing between month names
+                Text(
+                  "March",
+                  style: _monthTextStyle.copyWith(
+                    color: Color.fromARGB(255, 200, 204, 207),
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+
+                    fontFamily: "poppins",
+                  ),
+                ),
+                const SizedBox(width: 16.0),
+                Text(
+                  "April",
+                  style: _monthTextStyle.copyWith(
+                    color: Color.fromARGB(255, 200, 204, 207),
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+
+                    fontFamily: "poppins",
+                  ),
+                ),
+                const SizedBox(width: 16.0),
+                Text(
+                  "May",
+                  style: _monthTextStyle.copyWith(
+                    color: Color.fromARGB(255, 200, 204, 207),
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+
+                    fontFamily: "poppins",
+                  ),
+                ),
+                const SizedBox(width: 16.0),
+                Text(
+                  "June",
+                  style: _monthTextStyle.copyWith(
+                    color: Color.fromARGB(255, 200, 204, 207),
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+
+                    fontFamily: "poppins",
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 24.0,
+            ), // Spacing between month header and date grid
+            // 2. Date Grid
+            Row(
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceAround, // Distribute columns evenly
+              children: [
+                _buildDayDateColumn("S", "14"),
+                _buildDayDateColumn("M", "15"),
+                _buildDayDateColumn(
+                  "T",
+                  "16",
+                  isSelected: true,
+                ), // Selected date
+                _buildDayDateColumn("W", "17"),
+                _buildDayDateColumn("T", "18"),
+                _buildDayDateColumn("F", "19"),
+                _buildDayDateColumn("S", "20"),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+
+            // Add the tasks section back with proper scrolling
+          ],
         ),
       ),
     );
