@@ -6,6 +6,7 @@ import 'package:ui_design/halal_place/halal_place.dart';
 import 'package:ui_design/jump_button/jump_button.dart';
 import 'package:ui_design/mosque_location/mosque_location.dart';
 import 'package:ui_design/qibla/qibla.dart';
+import 'package:ui_design/share_on/share_on.dart';
 import 'package:ui_design/ticktick/ticktick.dart';
 
 class Pages extends StatefulWidget {
@@ -94,6 +95,15 @@ class _PagesState extends State<Pages> {
                 );
               },
               child: Text('Quran Search'), // Simple widget as child
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ShareScreen()),
+                );
+              },
+              child: Text('ShareScreen'), // Simple widget as child
             ),
           ],
         ),
